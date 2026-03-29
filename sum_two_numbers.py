@@ -1,15 +1,20 @@
-from pathlib import Path
+from __future__ import annotations
+
 import sys
+from pathlib import Path
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent
-SRC_DIR = PROJECT_ROOT / "src"
+def run() -> int:
+    project_root = Path(__file__).resolve().parent
+    src_dir = project_root / "src"
 
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
+    if str(src_dir) not in sys.path:
+        sys.path.insert(0, str(src_dir))
 
-from sum_two_numbers.cli import main
+    from sum_two_numbers.cli import main
+
+    return main()
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(run())

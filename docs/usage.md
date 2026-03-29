@@ -1,32 +1,46 @@
-# Uso Rapido
+# Usage
 
-## Ejecutar desde `src/main.py`
-
-```bash
-python src/main.py <first_number> <second_number>
-```
-
-Ejemplo:
+## Install Dependencies
 
 ```bash
-python src/main.py 10.5 2.5
+python -m pip install -r requirements-dev.txt
 ```
 
-Salida esperada:
-
-```text
-The sum is: 13.0
-```
-
-## Ejecutar desde el wrapper del proyecto
+## Run the Example App
 
 ```bash
-python sum_two_numbers.py 10.5 2.5
+python src/main.py 3 4
+python sum_two_numbers.py 3 4
 ```
 
-## Ejecutar como comando instalado
+## Run Tests
 
 ```bash
-pip install -e .
-sum-two-numbers 10.5 2.5
+python -m pytest
+```
+
+## Run Quality Checks
+
+```bash
+python -m ruff check .
+python -m black --check .
+python scripts/healthcheck.py
+```
+
+## Fix Formatting
+
+```bash
+python -m black .
+```
+
+## Generate a Context Snapshot
+
+```bash
+python scripts/context_snapshot.py
+```
+
+## Create a New Project from This Framework
+
+```bash
+python scripts/scaffold_project.py --name my-project --path ..\my-project
 ```

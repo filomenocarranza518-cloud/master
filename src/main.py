@@ -1,14 +1,19 @@
-from pathlib import Path
+from __future__ import annotations
+
 import sys
+from pathlib import Path
 
 
-CURRENT_DIR = Path(__file__).resolve().parent
+def run() -> int:
+    current_dir = Path(__file__).resolve().parent
 
-if str(CURRENT_DIR) not in sys.path:
-    sys.path.insert(0, str(CURRENT_DIR))
+    if str(current_dir) not in sys.path:
+        sys.path.insert(0, str(current_dir))
 
-from sum_two_numbers.cli import main
+    from sum_two_numbers.cli import main
+
+    return main()
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(run())

@@ -1,15 +1,22 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "sum-two-numbers"
 version = "0.1.0"
-description = "A small command-line application that adds two numbers."
+description = "An AI-ready Python project scaffold with an example CLI app."
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
     { name = "Project Maintainer" }
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.8.0",
+    "pytest>=8.3.0",
+    "ruff>=0.6.9",
 ]
 
 [project.scripts]
@@ -20,3 +27,19 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP"]

@@ -1,71 +1,15 @@
-# Documentacion del Proyecto
+# Documentation Index
 
-## Resumen
+This folder stores the project memory for both humans and AI tools.
 
-Este proyecto implementa una aplicacion de linea de comandos en Python para sumar dos numeros. La estructura esta organizada para facilitar mantenimiento, pruebas, documentacion y versionado.
+## Files
 
-## Flujo Profesional
+- `usage.md`: quick commands and local development basics
+- `architecture.md`: system structure and design rules
+- `ai-stack.md`: recommended AI stack for VS Code and fallback strategy
+- `runbooks/ai-fallback.md`: what to do when an AI tool is unavailable
+- `changelog.md`: notable framework changes
 
-```text
-Idea -> ChatGPT
-Codigo -> Codex
-Edicion -> VS Code
-Control -> GitHub
-Docs -> Markdown
-```
+## Why This Matters
 
-## Carpetas Principales
-
-### `src/`
-
-Contiene el codigo fuente principal.
-
-- `main.py`: punto de entrada simple para ejecutar la app.
-- `sum_two_numbers/cli.py`: logica principal de la interfaz por linea de comandos.
-
-### `docs/`
-
-Contiene la documentacion del proyecto.
-
-- `README.md`: guia general.
-- `usage.md`: guia de ejecucion rapida.
-
-### `tests/`
-
-Contiene pruebas automatizadas para validar la aplicacion.
-
-## Comandos Utiles
-
-Inicializar entorno:
-
-```bash
-pip install -e .
-```
-
-Ejecutar la aplicacion:
-
-```bash
-python src/main.py 3 4
-```
-
-Ejecutar pruebas:
-
-```bash
-python -m unittest discover -s tests -v
-```
-
-## Git y GitHub
-
-Comandos basicos:
-
-```bash
-git add .
-git commit -m "actualiza proyecto"
-git push
-```
-
-## Extensiones Futuras
-
-- Agregar mas operaciones matematicas.
-- Incorporar `argparse` avanzado con subcomandos.
-- Agregar cobertura de pruebas y CI.
+When an assistant, extension, or service is unavailable, the documentation in this folder becomes the shared backup context that lets work continue with minimal interruption.
