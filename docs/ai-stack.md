@@ -27,6 +27,7 @@ Provide an AI-assisted workflow with backup paths so development can continue wh
 - `docs/`
 - `prompts/`
 - `.github/copilot-instructions.md`
+- `docs/status/current-session.md`
 
 ## Recovery Principle
 
@@ -37,7 +38,8 @@ If one assistant fails:
 1. use the shared docs and prompts
 2. run the VS Code tasks directly
 3. generate a context snapshot
-4. continue with a secondary assistant
+4. switch into the dev container if the host setup is unstable
+5. continue with a secondary assistant
 
 ## Extension Recommendations
 

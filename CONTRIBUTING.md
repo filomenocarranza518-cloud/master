@@ -3,7 +3,7 @@
 ## Local Setup
 
 ```bash
-python -m pip install -r requirements-dev.txt
+python scripts/bootstrap.py
 ```
 
 ## Before Opening a Pull Request
@@ -16,6 +16,18 @@ python -m ruff check .
 python -m black --check .
 python scripts/healthcheck.py
 ```
+
+## Branch Naming
+
+- `feature/<name>` for new work
+- `fix/<name>` for bug fixes
+- `docs/<name>` for documentation-only work
+
+## Pull Request Policy
+
+- target `main`
+- keep each change focused
+- update docs alongside workflow or behavior changes
 
 ## Documentation Rule
 

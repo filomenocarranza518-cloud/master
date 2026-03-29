@@ -35,7 +35,13 @@ python scripts/context_snapshot.py
 
 - Codex in VS Code
 - GitHub Copilot Chat
+- VS Code dev container
 - direct terminal commands and VS Code tasks
+
+5. If Git is available, rely on the local hooks:
+
+- `pre-commit` refreshes the context snapshot before commit
+- `pre-push` runs tests before the push leaves the machine
 
 ## Important Rule
 

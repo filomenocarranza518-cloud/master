@@ -3,7 +3,7 @@
 ## Install Dependencies
 
 ```bash
-python -m pip install -r requirements-dev.txt
+python scripts/bootstrap.py
 ```
 
 ## Run the Example App
@@ -26,6 +26,16 @@ python -m ruff check .
 python -m black --check .
 python scripts/healthcheck.py
 ```
+
+## Install Git Hooks
+
+```bash
+python -m pre_commit install --hook-type pre-commit --hook-type pre-push
+```
+
+## Open in a Dev Container
+
+This repository includes `.devcontainer/devcontainer.json` so VS Code can recreate the environment with the recommended extensions and setup commands.
 
 ## Fix Formatting
 

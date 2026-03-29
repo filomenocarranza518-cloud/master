@@ -46,6 +46,18 @@ def top_level_tree() -> list[str]:
     return entries
 
 
+def modified_files() -> list[str]:
+    status_output = run_git("status", "--short")
+    if status_output in {"Unavailable", "No output"}:
+        return ["- Unavailable"]
+
+    lines = [line.strip() for line in status_output.splitlines() if line.strip()]
+    if not lines:
+        return ["- None"]
+
+    return [f"- {line}" for line in lines]
+
+
 def main() -> int:
     STATUS_DIR.mkdir(parents=True, exist_ok=True)
     timestamp = dt.datetime.now().astimezone().isoformat(timespec="seconds")
@@ -70,6 +82,17 @@ def main() -> int:
         "## Top-Level Tree",
         "",
         *top_level_tree(),
+        "",
+        "## Modified Files",
+        "",
+        *modified_files(),
+        "",
+        "## Suggested Commands",
+        "",
+        "- python scripts/healthcheck.py",
+        "- python -m pytest",
+        "- python -m ruff check .",
+        "- python -m black --check .",
         "",
         "## Recovery Hint",
         "",

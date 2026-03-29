@@ -1,0 +1,27 @@
+repos:
+  - repo: local
+    hooks:
+      - id: context-snapshot
+        name: Context Snapshot
+        entry: python scripts/context_snapshot.py
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]
+      - id: ruff
+        name: Ruff
+        entry: python -m ruff check .
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]
+      - id: black-check
+        name: Black Check
+        entry: python -m black --check .
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]
+      - id: pytest
+        name: Pytest
+        entry: python -m pytest
+        language: system
+        pass_filenames: false
+        stages: [pre-push]
