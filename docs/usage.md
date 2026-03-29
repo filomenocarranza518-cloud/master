@@ -1,29 +1,32 @@
-# Usage
+# Uso Rapido
 
-## Command-Line Interface
-
-The application expects two numeric arguments:
+## Ejecutar desde `src/main.py`
 
 ```bash
-python sum_two_numbers.py <first_number> <second_number>
+python src/main.py <first_number> <second_number>
 ```
 
-Example:
+Ejemplo:
 
 ```bash
-python sum_two_numbers.py 10.5 2.5
+python src/main.py 10.5 2.5
 ```
 
-Expected output:
+Salida esperada:
 
 ```text
 The sum is: 13.0
 ```
 
-## Installed Command
-
-If the project is installed with `pip install -e .`, you can run:
+## Ejecutar desde el wrapper del proyecto
 
 ```bash
+python sum_two_numbers.py 10.5 2.5
+```
+
+## Ejecutar como comando instalado
+
+```bash
+pip install -e .
 sum-two-numbers 10.5 2.5
 ```
